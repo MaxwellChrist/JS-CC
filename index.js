@@ -205,3 +205,20 @@ getStudents({
     hasTeachingAssistant: false, 
     classroom: ["Emily", "David", "Sam", "Tony"]
 })
+
+///////////////////////////////////Problem 8 Dynamic colors //////////////////////////////////////////////////////
+let button = document.getElementById("buttonColorMixerUpper")
+let makeColor = color => {
+    document.body.style.background = color
+}
+let buttonColorChanger = (() => {
+    return button.addEventListener("click", () => {
+        if (document.body.style.background === "blue") {
+            makeColor("green")
+        } else if (document.body.style.background === "green") {
+            makeColor("pink")
+        } else if (document.body.style.background === "pink" || document.body.style.background === "") {
+            makeColor("blue")
+        }
+    })
+})()
