@@ -152,5 +152,16 @@ class P4BookStore extends P1BookStore2 {
     
 }
 let testBook = new P4BookStore("Flowers for Algernon", "Daniel Keyes", 44, 29, "3rd")
-console.log(testBook.availability)
-console.log(testBook.getEdition())
+// console.log(testBook.availability)
+// console.log(testBook.getEdition())
+
+///////////////////////////////////Problem 5 private object //////////////////////////////////////////////////////
+let username = Symbol('username')
+let password = Symbol('password')
+
+let user = {
+    [username]: "Max",
+    [password]: "12345",
+    age: 31,
+}
+console.log(user.username, user.password)
