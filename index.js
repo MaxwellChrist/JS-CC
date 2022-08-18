@@ -110,32 +110,47 @@ let testMovie2 = new Movie2("Lord of the Rings: The Two Towers", "Peter Jackson"
 // console.log(testMovie2.getOverview())
 
 ///////////////////////////////////Problem 3 Vegetarian Dinner //////////////////////////////////////////////////////
-let menu = document.getElementById('menu')
-const dishes = [
-    {
-        name: "Eggplant Parmesan",
-        vegetarian: true
-    },
-    {
-        name: "Spaghetti & Meatballs",
-        vegetarian: false
-    },
-    {
-        name: "Pepperoni Calzone",
-        vegetarian: false
-    },
-    {
-        name: "Caprese Chicken",
-        vegetarian: false
-    },
-    {
-        name: "Mushroom Risotto",
-        vegetarian: true
-    },
-]
-let veggyFilter = dishes.filter(item => item.vegetarian)
-veggyFilter.forEach(item => {
-    let dish = document.createElement('li')
-    dish.textContent = item.name
-    menu.append(dish)
-})
+// let menu = document.getElementById("menu")
+// const dishes = [
+//     {
+//         name: "Eggplant Parmesan",
+//         vegetarian: true
+//     },
+//     {
+//         name: "Spaghetti & Meatballs",
+//         vegetarian: false
+//     },
+//     {
+//         name: "Pepperoni Calzone",
+//         vegetarian: false
+//     },
+//     {
+//         name: "Caprese Chicken",
+//         vegetarian: false
+//     },
+//     {
+//         name: "Mushroom Risotto",
+//         vegetarian: true
+//     },
+// ]
+// let veggyFilter = dishes.filter(item => item.vegetarian)
+// veggyFilter.forEach(item => {
+//     let dish = document.createElement('li')
+//     dish.textContent = item.name
+//     menu.appendChild(dish)
+// })
+
+///////////////////////////////////Problem 4 Technical book class //////////////////////////////////////////////////////
+class P4BookStore extends P1BookStore2 {
+    constructor(title, author, ISBN, numCopies, edition) {
+        super(title, author, ISBN, numCopies)
+        this.edition = edition
+    }
+    getEdition() {
+        return `The current version of the book is ${this.edition}`
+    }
+    
+}
+let testBook = new P4BookStore("Flowers for Algernon", "Daniel Keyes", 44, 29, "3rd")
+console.log(testBook.availability)
+console.log(testBook.getEdition())
