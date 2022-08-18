@@ -164,4 +164,27 @@ let user = {
     [password]: "12345",
     age: 31,
 }
-console.log(user.username, user.password)
+// console.log(user.username, user.password)
+
+//////////////////////////////Problem 6 Ticking Time - using setInterval (easiest way) ////////////////////////////////////////////
+// let clock = document.getElementById("clock")
+// let clockWork = () => {
+//     return setInterval(() => {
+//         let date = new Date()
+//         clock.textContent = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+//     }, 1000)
+// }
+// clockWork()
+
+/////////////Problem 6 Ticking Time - using setTimeout (little harder since it's meant to be only called once) //////////////////////
+// let clock = document.getElementById("clock")
+// let clockWork = () => {
+//     return setTimeout(() => {
+//         let date = new Date()
+//         clock.textContent = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+//         clockWork()
+//     }, 1000)
+// }
+// clockWork()
+
+///////////////////////////////////Problem 5 private object //////////////////////////////////////////////////////
