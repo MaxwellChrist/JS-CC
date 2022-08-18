@@ -207,18 +207,27 @@ getStudents({
 })
 
 ///////////////////////////////////Problem 8 Dynamic colors //////////////////////////////////////////////////////
-let button = document.getElementById("buttonColorMixerUpper")
-let makeColor = color => {
-    document.body.style.background = color
+// let button = document.getElementById("buttonColorMixerUpper")
+// let makeColor = color => {
+//     document.body.style.background = color
+// }
+// let buttonColorChanger = (() => {
+//     return button.addEventListener("click", () => {
+//         if (document.body.style.background === "blue") {
+//             makeColor("green")
+//         } else if (document.body.style.background === "green") {
+//             makeColor("pink")
+//         } else if (document.body.style.background === "pink" || document.body.style.background === "") {
+//             makeColor("blue")
+//         }
+//     })
+// })()
+///////////////////////////////////Problem 9 Coffee Calculations //////////////////////////////////////////////////////
+let coffeeCalc = (data) => {
+    let coffeePrice = 1.25
+    let total = data.reduce((acc, curr) => acc + curr) * coffeePrice
+    return console.log(`The total bill is ${total}`)
 }
-let buttonColorChanger = (() => {
-    return button.addEventListener("click", () => {
-        if (document.body.style.background === "blue") {
-            makeColor("green")
-        } else if (document.body.style.background === "green") {
-            makeColor("pink")
-        } else if (document.body.style.background === "pink" || document.body.style.background === "") {
-            makeColor("blue")
-        }
-    })
-})()
+coffeeCalc([1, 5, 7, 3, 5])
+
+///////////////////////////////////Problem 10 Food Truck //////////////////////////////////////////////////////
