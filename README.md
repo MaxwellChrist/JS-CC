@@ -1,1 +1,3 @@
-"# JS-CC" 
+This repo is to explore a coding challenges course I found on LinkedIn. This is the link to the course: https://www.linkedin.com/learning/javascript-code-challenges/put-your-javascript-skills-to-the-test?autoplay=true
+
+I am also running everything out of a single JS file due to these challenges only being solved with JS. How I am viewing my results is from a VS Code extension called code runner, which allows me to see the results of my code in the terminal
