@@ -109,4 +109,33 @@ class Movie2{
 let testMovie2 = new Movie2("Lord of the Rings: The Two Towers", "Peter Jackson", "Sci-fi", 2002, 8.8)
 // console.log(testMovie2.getOverview())
 
-///////////////////////////////////Problem 3 Movie Object - functional component //////////////////////////////////////////////////////
+///////////////////////////////////Problem 3 Vegetarian Dinner //////////////////////////////////////////////////////
+let menu = document.getElementById('menu')
+const dishes = [
+    {
+        name: "Eggplant Parmesan",
+        vegetarian: true
+    },
+    {
+        name: "Spaghetti & Meatballs",
+        vegetarian: false
+    },
+    {
+        name: "Pepperoni Calzone",
+        vegetarian: false
+    },
+    {
+        name: "Caprese Chicken",
+        vegetarian: false
+    },
+    {
+        name: "Mushroom Risotto",
+        vegetarian: true
+    },
+]
+let veggyFilter = dishes.filter(item => item.vegetarian)
+veggyFilter.forEach(item => {
+    let dish = document.createElement('li')
+    dish.textContent = item.name
+    menu.append(dish)
+})
