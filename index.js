@@ -187,4 +187,21 @@ let user = {
 // }
 // clockWork()
 
-///////////////////////////////////Problem 5 private object //////////////////////////////////////////////////////
+///////////////////////////////////Problem 7 Classroom attendance //////////////////////////////////////////////////////
+function getStudents(data) {
+    let {hasTeachingAssistant, classroom} = data
+    let [teacher, teachingAssistant] = classroom
+    if (!hasTeachingAssistant) {
+        teachingAssistant = null
+    }
+    return console.log(classroom.filter(item => item !== teacher && item !== teachingAssistant))
+}
+
+getStudents({
+    hasTeachingAssistant: true,
+    classroom:  ["Mike", "Michelle", "Anthony", "Jessica"]
+})
+getStudents({
+    hasTeachingAssistant: false, 
+    classroom: ["Emily", "David", "Sam", "Tony"]
+})
