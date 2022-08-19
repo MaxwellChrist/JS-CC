@@ -252,19 +252,43 @@ let coffeeCalc = (data) => {
 // masterMenu([["tacos", "burgers"], ["pizza"], ["burgers"],["tacos", "pizza"]])
 
 ///////////////////////////////////Problem 11 Train Generator //////////////////////////////////////////////////////
+// let trainBtn = document.getElementById("train-stops")
+// function* moveTrainGen(arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         yield arr[i]
+//     }
+//     trainBtn.setAttribute("disabled", true)
+//     return "End of the line!"
+// }
 
-let trainBtn = document.getElementById("train-stops")
-function* moveTrainGen() {
-    let stops = ["Poughkeepsie", "Newburgh", "Peekskill", "Yonkers", "Bronx", "Grand Central"]
-    for (let i = 0; i < stops.length; i++) {
-        yield stops[i]
+// const moveTrain = moveTrainGen(["Poughkeepsie", "Newburgh", "Peekskill", "Yonkers", "Bronx", "Grand Central"])
+
+// trainBtn.addEventListener("click", () => {
+//     console.log(moveTrain.next().value)
+// })
+
+///////////////////////////Problem 12 string permutation - regular function/////////////////////////////////////////////
+const scrabble = (letters) => {
+    let total
+    for (let i = 1; i <= letters.length; i++) {
+        if (total === undefined) {
+            total = i
+            continue
+        }
+        total *= i
     }
-    trainBtn.setAttribute("disabled", true)
-    return "End of the line!"
+    return console.log(total)
 }
 
-const moveTrain = moveTrainGen()
+scrabble('abcde')
 
-trainBtn.addEventListener("click", () => {
-    console.log(moveTrain.next().value)
-})
+///////////////////////////Problem 12 string permutation - recursive function/////////////////////////////////////////////
+const scrabble2 = (letters) => {
+    if (letters.length === 1) {
+        return 1
+    } else {
+        return letters.length * scrabble2(letters.slice(1))
+    }
+}
+
+console.log(scrabble2('monkey'))
