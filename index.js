@@ -273,14 +273,13 @@ const scrabble = (letters) => {
     for (let i = 1; i <= letters.length; i++) {
         if (total === undefined) {
             total = i
-            continue
         }
         total *= i
     }
     return console.log(total)
 }
 
-scrabble('abcde')
+// scrabble('abcde')
 
 ///////////////////////////Problem 12 string permutation - recursive function/////////////////////////////////////////////
 const scrabble2 = (letters) => {
@@ -291,4 +290,25 @@ const scrabble2 = (letters) => {
     }
 }
 
-console.log(scrabble2('monkey'))
+// console.log(scrabble2('monkey'))
+
+///////////////////////////Problem 12 string permutation - recursive function/////////////////////////////////////////////
+const users = document.getElementById("users")
+const link = "https://randomuser.me/api/?results=5"
+
+async function getUsers() {
+    let promise = await fetch(link)
+    if (promise.ok) {
+        let json = await promise.json()
+        console.log(json.results)
+        json.results.forEach(item => {
+            let friend = document.createElement("li");
+            friend.textContent = item.name["title"] + ". " + item.name["first"] + " " + item.name["last"]
+            users.appendChild(friend)
+        })
+    } else {
+        console.log("Error: " + promise.status)
+    }
+}
+
+getUsers()
