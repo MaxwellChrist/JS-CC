@@ -315,9 +315,30 @@ const scrabble2 = (letters) => {
 ///////////////////////////Problem 14 URLify/////////////////////////////////////////////
 
 let stringToURL = (str) => {
-    let URL = str.replace(/[ ]/g, '-').toLowerCase().replace(/['",.?\s`~!@#$%^&*()<>/]/g, "")
+    let URL = str.replaceAll(' ', '-').toLowerCase().replace(/['",.?\s`~!@#$%^&*()<>/]/g, "")
     console.log(URL)
 }
 
-stringToURL("My blog name!")
-stringToURL("Emma's blog")
+// stringToURL("My blog name!")
+// stringToURL("Emma's blog")
+
+///////////////////////////Problem 15 password strength/////////////////////////////////////////////
+let objChecker = {
+    lowercase: /[a-z]/g,
+    upperCase: /[A-Z]/g,
+    digit: /[0-9]/g,
+    specialChar: /(?=.+[!@#$%^&*])/g,
+}
+
+let passwordChecker = (password) => {
+    let arrChecker = []
+    for (let x in objChecker) {
+        let tester = password.match(objChecker[x]) || 0
+        tester.length > 0 ? arrChecker.push(true) : arrChecker.push(false)
+    }
+    arrChecker.every(item => item) && password.length >= 8 ? console.log("valid password") : console.log("Invalid password")
+}
+
+passwordChecker("FSDFmsefjoj234")
+passwordChecker("abcdeABCDE12345")
+passwordChecker("AAAbbb333$$$")
