@@ -292,23 +292,32 @@ const scrabble2 = (letters) => {
 
 // console.log(scrabble2('monkey'))
 
-///////////////////////////Problem 12 string permutation - recursive function/////////////////////////////////////////////
-const users = document.getElementById("users")
-const link = "https://randomuser.me/api/?results=5"
+///////////////////////////Problem 13 five freinds /////////////////////////////////////////////
+// const users = document.getElementById("users")
+// const link = "https://randomuser.me/api/?results=5"
 
-async function getUsers() {
-    let promise = await fetch(link)
-    if (promise.ok) {
-        let json = await promise.json()
-        console.log(json.results)
-        json.results.forEach(item => {
-            let friend = document.createElement("li");
-            friend.textContent = item.name["title"] + ". " + item.name["first"] + " " + item.name["last"]
-            users.appendChild(friend)
-        })
-    } else {
-        console.log("Error: " + promise.status)
-    }
+// async function getUsers() {
+//     let promise = await fetch(link)
+//     if (promise.ok) {
+//         let json = await promise.json()
+//         console.log(json.results)
+//         json.results.forEach(item => {
+//             let friend = document.createElement("li");
+//             friend.textContent = item.name["title"] + ". " + item.name["first"] + " " + item.name["last"]
+//             users.appendChild(friend)
+//         })
+//     } else {
+//         console.log("Error: " + promise.status)
+//     }
+// }
+// getUsers()
+
+///////////////////////////Problem 14 URLify/////////////////////////////////////////////
+
+let stringToURL = (str) => {
+    let URL = str.replace(/[ ]/g, '-').toLowerCase().replace(/['",.?\s`~!@#$%^&*()<>/]/g, "")
+    console.log(URL)
 }
 
-getUsers()
+stringToURL("My blog name!")
+stringToURL("Emma's blog")
