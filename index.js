@@ -197,14 +197,14 @@ function getStudents(data) {
     return console.log(classroom.filter(item => item !== teacher && item !== teachingAssistant))
 }
 
-getStudents({
-    hasTeachingAssistant: true,
-    classroom:  ["Mike", "Michelle", "Anthony", "Jessica"]
-})
-getStudents({
-    hasTeachingAssistant: false, 
-    classroom: ["Emily", "David", "Sam", "Tony"]
-})
+// getStudents({
+//     hasTeachingAssistant: true,
+//     classroom:  ["Mike", "Michelle", "Anthony", "Jessica"]
+// })
+// getStudents({
+//     hasTeachingAssistant: false, 
+//     classroom: ["Emily", "David", "Sam", "Tony"]
+// })
 
 ///////////////////////////////////Problem 8 Dynamic colors //////////////////////////////////////////////////////
 // let button = document.getElementById("buttonColorMixerUpper")
@@ -228,6 +228,44 @@ let coffeeCalc = (data) => {
     let total = data.reduce((acc, curr) => acc + curr) * coffeePrice
     return console.log(`The total bill is ${total}`)
 }
-coffeeCalc([1, 5, 7, 3, 5])
+// coffeeCalc([1, 5, 7, 3, 5])
 
 ///////////////////////////////////Problem 10 Food Truck //////////////////////////////////////////////////////
+
+let masterMenu = (menu) => {
+    let oneMenu = menu.flat()
+    let trimmedMenu = new Set()
+    oneMenu.forEach(item => {
+        trimmedMenu.add(item)
+    })
+
+
+    let foodTruckMenu = document.getElementById("combined-menu")
+    for (let item of trimmedMenu) {
+        let foodItem = document.createElement('li')
+        foodItem.textContent = item
+        foodTruckMenu.appendChild(foodItem)
+    }
+
+}
+
+masterMenu([["pizza", "pasta"], ["pizza", "calzones", "mozzarella sticks"], ["lobster", "crab", "gumbo"],["pasta", "salad"]])
+
+// function foodTruckFestival(menus) {
+//     let flatMenus = menus.flat()
+
+//     let combinedMenu = new Set()
+//     flatMenus.forEach(item => {
+//         combinedMenu.add(item)
+//     })
+
+//     const menuNode = document.querySelector("#combined-menu")
+//     for (let item of combinedMenu) {
+//         let foodNode = document.createElement("li")
+//         foodNode.innerText = item
+//         menuNode.appendChild(foodNode)
+//     }
+// }
+
+// // foodTruckFestival([["pizza, pasta"], ["pizza, calzones, mozzarella sticks"], ["lobster", "crab", "gumbo"],["pasta, salad"]])
+// foodTruckFestival([["tacos", "burgers"], ["pizza"], ["burgers"],["tacos", "pizza"]])
