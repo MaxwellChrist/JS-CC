@@ -232,40 +232,39 @@ let coffeeCalc = (data) => {
 
 ///////////////////////////////////Problem 10 Food Truck //////////////////////////////////////////////////////
 
-let masterMenu = (menu) => {
-    let oneMenu = menu.flat()
-    let trimmedMenu = new Set()
-    oneMenu.forEach(item => {
-        trimmedMenu.add(item)
-    })
-
-
-    let foodTruckMenu = document.getElementById("combined-menu")
-    for (let item of trimmedMenu) {
-        let foodItem = document.createElement('li')
-        foodItem.textContent = item
-        foodTruckMenu.appendChild(foodItem)
-    }
-
-}
-
-masterMenu([["pizza", "pasta"], ["pizza", "calzones", "mozzarella sticks"], ["lobster", "crab", "gumbo"],["pasta", "salad"]])
-
-// function foodTruckFestival(menus) {
-//     let flatMenus = menus.flat()
-
-//     let combinedMenu = new Set()
-//     flatMenus.forEach(item => {
-//         combinedMenu.add(item)
+// let masterMenu = (menu) => {
+//     let oneMenu = menu.flat()
+//     let trimmedMenu = new Set()
+//     oneMenu.forEach(item => {
+//         trimmedMenu.add(item)
 //     })
 
-//     const menuNode = document.querySelector("#combined-menu")
-//     for (let item of combinedMenu) {
-//         let foodNode = document.createElement("li")
-//         foodNode.innerText = item
-//         menuNode.appendChild(foodNode)
+
+//     let foodTruckMenu = document.getElementById("combined-menu")
+//     for (let item of trimmedMenu) {
+//         let foodItem = document.createElement('li')
+//         foodItem.textContent = item
+//         foodTruckMenu.appendChild(foodItem)
 //     }
 // }
 
-// // foodTruckFestival([["pizza, pasta"], ["pizza, calzones, mozzarella sticks"], ["lobster", "crab", "gumbo"],["pasta, salad"]])
-// foodTruckFestival([["tacos", "burgers"], ["pizza"], ["burgers"],["tacos", "pizza"]])
+// masterMenu([["pizza", "pasta"], ["pizza", "calzones", "mozzarella sticks"], ["lobster", "crab", "gumbo"],["pasta", "salad"]])
+// masterMenu([["tacos", "burgers"], ["pizza"], ["burgers"],["tacos", "pizza"]])
+
+///////////////////////////////////Problem 11 Train Generator //////////////////////////////////////////////////////
+
+let trainBtn = document.getElementById("train-stops")
+function* moveTrainGen() {
+    let stops = ["Poughkeepsie", "Newburgh", "Peekskill", "Yonkers", "Bronx", "Grand Central"]
+    for (let i = 0; i < stops.length; i++) {
+        yield stops[i]
+    }
+    trainBtn.setAttribute("disabled", true)
+    return "End of the line!"
+}
+
+const moveTrain = moveTrainGen()
+
+trainBtn.addEventListener("click", () => {
+    console.log(moveTrain.next().value)
+})
